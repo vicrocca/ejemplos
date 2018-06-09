@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cilindro : MonoBehaviour {
 
+    public GameObject Bullet;
 	// Use this for initialization
 	void Start () {
 		
@@ -28,4 +29,21 @@ public class Cilindro : MonoBehaviour {
             
 		
 	}
+
+    void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.tag == "Bullet")
+        {
+            
+
+            gameObject.SetActive(false);
+
+        }
+    }
+
+   
+
+
+
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Capsula : MonoBehaviour
 {
-
+    public GameObject Bullet;
     // Use this for initialization
     void Start()
     {
@@ -35,4 +35,18 @@ public class Capsula : MonoBehaviour
        
 
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.tag == "Bullet")
+        {
+
+
+
+            transform.localScale += new Vector3(3F, 0, 0);
+
+        }
+    }
+
 }

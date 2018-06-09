@@ -212,7 +212,7 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 0}
   Bullet_Emitter: {fileID: 277727006}
-  Bullet: {fileID: 1422535315774716, guid: a8653defd9fb04cba96e13d3ab4f8cad, type: 2}
+  Bullet: {fileID: 1671353225272212, guid: 85d70314cb033446cb66b0c412ddf1b1, type: 2}
   Esferita: {fileID: 1545987259}
   Bullet_Forward_Force: 90
 --- !u!135 &189395507
@@ -600,6 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1c2de3eb6354d74b8c4fd66577af20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet: {fileID: 1671353225272212, guid: 85d70314cb033446cb66b0c412ddf1b1, type: 2}
 --- !u!1 &1545987259
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b87277591b1e43e88ae5fffbdd9ddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet: {fileID: 1671353225272212, guid: 85d70314cb033446cb66b0c412ddf1b1, type: 2}
 --- !u!54 &2118401611
 Rigidbody:
   m_ObjectHideFlags: 0
