@@ -481,7 +481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_Name
-      value: Cubos (2)
+      value: Cubo3
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_TagString
@@ -504,7 +504,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -512,7 +512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -540,6 +540,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_TagString
+      value: Cubo1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
+      propertyPath: m_Name
       value: Cubo1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -709,7 +713,7 @@ GameObject:
   - component: {fileID: 437323484}
   - component: {fileID: 437323486}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Violet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,12 +890,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3091c83f878d458e93524e80648326a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador2: {fileID: 1288287419}
+  MoverArriba: 273
+  MoverAbajo: 274
+  MoverIzquierda: 276
+  MoverDerecha: 275
+  TeclaBomba: 32
+  contrincante: {fileID: 1288287419}
+  popUp: {fileID: 545275572}
+  Resultado: {fileID: 0}
+  Bomba: {fileID: 1157824475338366, guid: 90d7b46e3d7bc4db393ff171c6aab84d, type: 2}
   cubo1: {fileID: 263986034}
   cubo2: {fileID: 423704044}
   cubo3: {fileID: 322348403}
-  popUp: {fileID: 545275572}
-  Bomba: {fileID: 1157824475338366, guid: 90d7b46e3d7bc4db393ff171c6aab84d, type: 2}
+  cubitos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   moveSpeed: 50
   contador1: 0
   contador2: 0
@@ -1072,7 +1086,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1108,7 +1122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_Name
-      value: Cubos (1)
+      value: Cubo2
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_TagString
@@ -1134,7 +1148,7 @@ GameObject:
   - component: {fileID: 1211202997}
   - component: {fileID: 1211202999}
   m_Layer: 5
-  m_Name: Text2
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1205,7 +1219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211202995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14d4add9ce6849a1ac3b8873e3d55f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c5d3240b04dc46fb99b84472aff33ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1216861348
@@ -1389,6 +1403,7 @@ GameObject:
   - component: {fileID: 1288287423}
   - component: {fileID: 1288287422}
   - component: {fileID: 1288287421}
+  - component: {fileID: 1288287420}
   m_Layer: 0
   m_Name: Jugador 2
   m_TagString: Jugador
@@ -1396,6 +1411,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1288287420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288287419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3091c83f878d458e93524e80648326a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoverArriba: 119
+  MoverAbajo: 115
+  MoverIzquierda: 97
+  MoverDerecha: 100
+  TeclaBomba: 113
+  contrincante: {fileID: 453427114}
+  popUp: {fileID: 545275572}
+  Resultado: {fileID: 0}
+  Bomba: {fileID: 1157824475338366, guid: 90d7b46e3d7bc4db393ff171c6aab84d, type: 2}
+  cubo1: {fileID: 263986034}
+  cubo2: {fileID: 423704044}
+  cubo3: {fileID: 322348403}
+  cubitos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  moveSpeed: 50
+  contador1: 0
+  contador2: 0
 --- !u!135 &1288287421
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreBehaviour : MonoBehaviour {
 
     private Text thisText;
-    private static int score;
+    private  static int score;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +18,10 @@ public class ScoreBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        thisText.text = "Violet: " + score;
+        thisText.text = "Violet:   " + score;
 	}
 
-    public static void AddScore()
+    public  void RefreshScore()
     {
         score -= 1;
     }

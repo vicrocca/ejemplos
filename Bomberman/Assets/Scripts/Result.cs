@@ -8,9 +8,9 @@ public class Result : MonoBehaviour
 
     private Text thisText;
 
-     private static int score1;
-    private static int score2;
-    private static string end;
+     public static int score1;
+    public static int score2;
+   
  
 
     // Use this for initialization
@@ -28,19 +28,19 @@ public class Result : MonoBehaviour
     void Update()
     {
 
-        thisText.text = "            END\n" + "Violet: "+ score1 + "    Red: " + score2;
+        thisText.text = "            END\n" + "Violet: " + score1 + "    Red: " + score2;
       
     }
 
    
     public static void AddScore1()
     {
-        score1 -= 1;
+        score1 = score1 - 1;
     }
 
     public static void AddScore2()
     {
-        score2 -= 1;
+        score2 = score2- 1;
     }
 }
 

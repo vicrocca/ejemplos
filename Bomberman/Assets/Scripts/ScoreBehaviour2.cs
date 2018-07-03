@@ -23,7 +23,7 @@ public class ScoreBehaviour2 : MonoBehaviour {
         thisText.text = "Red: " + score;
     }
 
-    public static void AddScore()
+    public static void RefreshScore()
     {
         score -= 1;
     }
