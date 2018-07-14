@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Bombas
-  - Choque
-  - Cubo1
-  - Cubo2
-  - Cubo3
-  - Jugador
+  tags: []
   layers:
   - Default
   - TransparentFX
