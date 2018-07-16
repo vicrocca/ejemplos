@@ -58,8 +58,8 @@ public class Player : MonoBehaviour {
 
     void PlaceBomb()
     {
-        GameObject Temporary_Bomb;
-        Temporary_Bomb = Instantiate(Bomb, transform.position, transform.rotation) as GameObject;
+        GameObject temporary_Bomb;
+        temporary_Bomb = Instantiate(Bomb, transform.position, transform.rotation) as GameObject;
     }
 
        

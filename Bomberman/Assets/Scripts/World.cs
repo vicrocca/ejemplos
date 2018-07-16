@@ -16,7 +16,7 @@ public class World : MonoBehaviour {
     public GameObject cube2;
     public GameObject cube3;
 
-    public GameObject Bomb;
+    public GameObject bomb;
 
  
     public List<GameObject> explosiveItems; //cubes

@@ -471,7 +471,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_Name
-      value: Cubo3
+      value: Cube3
       objectReference: {fileID: 0}
     - target: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0, type: 2}
       propertyPath: m_TagString
@@ -483,6 +483,11 @@ Prefab:
 --- !u!4 &346617097 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 346617096}
+--- !u!1 &346617098 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0,
     type: 2}
   m_PrefabInternal: {fileID: 346617096}
 --- !u!1001 &368724782
@@ -539,6 +544,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03b3181722db74605870372675a3ddb0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &368724783 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 368724782}
 --- !u!1 &377269052
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +696,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416167772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 416167774}
+  - component: {fileID: 416167773}
+  m_Layer: 0
+  m_Name: World
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &416167773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416167772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b4eecb6771e4bed9073f283b5f8322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 453427114}
+  player2: {fileID: 1288287419}
+  cube1: {fileID: 368724783}
+  cube2: {fileID: 1126463159}
+  cube3: {fileID: 346617098}
+  bomb: {fileID: 1157824475338366, guid: 90d7b46e3d7bc4db393ff171c6aab84d, type: 2}
+  explosiveItems: []
+--- !u!4 &416167774
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416167772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &437323482
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +840,7 @@ GameObject:
   - component: {fileID: 453427118}
   - component: {fileID: 453427117}
   - component: {fileID: 453427115}
+  - component: {fileID: 453427116}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -802,6 +860,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &453427116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453427114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6214e055170741b891f17ffba9169fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveUp: 273
+  MoveDown: 274
+  MoveLeft: 276
+  MoveRight: 275
+  BombKey: 318
+  Bomb: {fileID: 1157824475338366, guid: 90d7b46e3d7bc4db393ff171c6aab84d, type: 2}
 --- !u!23 &453427117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1068,6 +1143,11 @@ Prefab:
 --- !u!4 &1126463158 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4443092389929132, guid: 03b3181722db74605870372675a3ddb0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1126463157}
+--- !u!1 &1126463159 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1922999285868126, guid: 03b3181722db74605870372675a3ddb0,
     type: 2}
   m_PrefabInternal: {fileID: 1126463157}
 --- !u!1 &1211202995
@@ -1337,6 +1417,7 @@ GameObject:
   - component: {fileID: 1288287423}
   - component: {fileID: 1288287422}
   - component: {fileID: 1288287421}
+  - component: {fileID: 1288287420}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1344,6 +1425,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1288287420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288287419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6214e055170741b891f17ffba9169fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveUp: 119
+  MoveDown: 115
+  MoveLeft: 97
+  MoveRight: 100
+  BombKey: 113
+  Bomb: {fileID: 1157824475338366, guid: 90d7b46e3d7bc4db393ff171c6aab84d, type: 2}
 --- !u!135 &1288287421
 SphereCollider:
   m_ObjectHideFlags: 0
