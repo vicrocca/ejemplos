@@ -16,20 +16,24 @@ public class World : MonoBehaviour {
     public GameObject cube2;
     public GameObject cube3;
 
-    public GameObject bomb;
+    public GameObject Bomb;
 
  
     public List<GameObject> explosiveItems; //cubes
 
+    /*
+     * @reski: por que son estaticos??
+     * */
+
     public static int[,] Board; 
-   
+    static int half;
+
 
     int upperlimitX;
     int lowerlimitX;
     int upperlimitZ;
     int lowerlimitZ;
 
-    static int half;
   
 
 	// Use this for initialization
@@ -51,7 +55,6 @@ public class World : MonoBehaviour {
             for (int j = 0; j < (upperlimitZ - lowerlimitZ); j++)
             {
                 Board[i,j] = 0;
-
             }
 
         }
@@ -143,9 +146,13 @@ public class World : MonoBehaviour {
 
     public static  bool IsTileFree(Vector3 newPosition)
    {
-        if (Board[(int)newPosition.x+half, (int)newPosition.z+half] == 1)
+        /*
+         * @reski: era una boludes estaban comparando con el 1 oseaestaban diciendo que se podian mover
+         * a los ocupados y no se podian mover a los vacios
+         * */
+        //if (Board[(int)newPosition.x+half, (int)newPosition.z+half] == 1)
+        if (Board[(int)newPosition.x + half, (int)newPosition.z + half] == 0)
         {
-
             return true;
 
         }

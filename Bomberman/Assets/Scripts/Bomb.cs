@@ -19,7 +19,11 @@ public class Bomb : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
+	/**
+     * @reski : se va a llamar una vez por loop, osea la funcion explode se va a llamar 
+     * muchas veces por segundo conviene ponerla en Start asi solo se llama cuando creamos 
+     * la Bomba con el Instantiate de Player.
+     * */
 	void Update () {
         
         Explode();

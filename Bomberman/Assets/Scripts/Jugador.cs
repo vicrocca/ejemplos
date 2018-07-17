@@ -19,7 +19,10 @@ public class Jugador : MonoBehaviour {
     public KeyCode TeclaBomba;
 
     public GameObject contrincante;
-    public GameObject popUp;
+   /*@reski 
+    * 
+    *fijense que hay varias cosas que no estan usando saquenlo si no lo necesitan mas
+    */ public GameObject popUp;
     public GameObject Resultado;
     public GameObject Bomba;
     public GameObject cubo1;
