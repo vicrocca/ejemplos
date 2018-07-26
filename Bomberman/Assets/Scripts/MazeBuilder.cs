@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MazeBuilder : MonoBehaviour
 {
-    public World maze;
+   
     public GameObject wallBlock;
+   
     // Use this for initialization
     void Update()
     {
@@ -14,13 +15,15 @@ public class MazeBuilder : MonoBehaviour
     }
 
     private void BuildMaze()
-    {
+    { 
         for (int i = 0; i <10; i++)
         {
             for (int j = 0; j < 10; j++)
             {
-                if(World.Board[i,j] != 0)
-                    Instantiate(wallBlock, transform.position + new Vector3(i,0,j), transform.rotation);
+                
+                if (World.Instance.Board[i, j] != 0)
+                    //GetComponent<World>()
+                    Instantiate(wallBlock, transform.position + new Vector3(i,1,j), transform.rotation);
             }
         }
     }

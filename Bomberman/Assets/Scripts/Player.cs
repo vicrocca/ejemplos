@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player : MonoBehaviour {
 
     //atributes: 3 lives
@@ -15,20 +16,23 @@ public class Player : MonoBehaviour {
     public KeyCode BombKey;
 
 
-    /*
-     *@reski: deberia ser bomb con minuscula por sr variable, porque sino se confunde con la Clase Bomb 
-     *conviene cambiar de GameObject a Bomb asi solo se pueden poner GameObjects con el Script Bomb attacheado.
-     * */
-    //public GameObject Bomb;
-    public Bomb Bomb;
+   
+    public int score;
+
+    // To allow only "bomb" script GameObjects to be attached to the player 
+    public Bomb bomb;
+  
+   
 
 	// Use this for initialization
 	void Start () {
-       
+        score = 2;
+   
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
         
         Vector3 directionOfMovement = Vector3.zero;
 
@@ -43,44 +47,41 @@ public class Player : MonoBehaviour {
 
         Vector3 newPosition = transform.position + directionOfMovement;
 
-        /*
-         * @reski
-         * agregro una condicion al if asi no pregunta al world cuando no apretamos tecla
-         * */
-
-        //if (World.IsTileFree(newPosition))
-        if (directionOfMovement!= Vector3.zero && World.IsTileFree(newPosition))
+       
+        // directionOfMovement!= Vector3.zero is added so that when the key is not pressed the World isnt asked 
+        if (directionOfMovement != Vector3.zero && World.Instance.IsTileFree(newPosition))
         {
-            World.ChangeToCero(transform.position);
+            
+            if(World.Instance.Board[(int)transform.position.x, (int)transform.position.z] != 2)
+            {
+                World.Instance.ChangeToCero(transform.position);
+            }
             transform.position += directionOfMovement;
-            World.ChangeToOne(transform.position);
+            World.Instance.ChangeToOne(transform.position);
 
         }
-        /*
-         * @reski: IsTile free daba siempre falso al poner bomba xq esta el jugador.
-         * O lo sacan o hacen que el jugador tenga otro numero e.g.  2 
-         * */
-        if (Input.GetKeyUp(BombKey) /*&& World.IsTileFree(transform.position)*/)
+       
+        // valor de 2 para bomba
+        if (Input.GetKeyUp(BombKey)&& World.Instance.Board[(int)transform.position.x, (int)transform.position.z]!=2)
         {
-             StartCoroutine("PlaceBomb");
-            /*
-        * @reski:van a tener problemas con esto porque el jugador se va a ir del tile que dejaron la bomba,
-        * y lo va a poner denuevo en 0. Asique es como que no hubiese nada. eso depende como quieran ustedes 
-        * la jugabilidad. Si quieren que la bomba bloquee movimiento o no. 
-        * */
-            World.ChangeToOne(transform.position);
+            PlaceBomb(); 
+            World.Instance.ChangeToTwo(transform.position);
         }
 	}
 
-    void PlaceBomb()
+    public void PlaceBomb()
     {
         GameObject Temporary_Bomb;
-        Temporary_Bomb = Instantiate(Bomb.gameObject, transform.position, transform.rotation) as GameObject;
+        Temporary_Bomb = Instantiate(bomb.gameObject, transform.position, transform.rotation) as GameObject;
     }
 
-       
-  
-
-   
-
+    public void RefreshScore()
+    {
+        score -= 1;
+        if (score==0)
+        {
+            UIBehaviour.Instance.EndGame();
+                        
+        }
+    }
 }
