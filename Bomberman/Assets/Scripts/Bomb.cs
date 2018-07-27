@@ -8,11 +8,11 @@ public class Bomb : MonoBehaviour {
     //functions: kill
    
 
-   static float bombExplosionDelay;
-    static int bombExplosionDistance;
-    static float screenDelay;
-    static int screenA;
-    static int screenB;
+  float bombExplosionDelay;
+     int bombExplosionDistance;
+    float screenDelay;
+     int screenA;
+    int screenB;
 
    
 	// Use this for initialization
@@ -116,7 +116,8 @@ public class Bomb : MonoBehaviour {
 
         }
 
-        if (a && b && c == false)
+        //if (a && b && c == false)
+        else if (a && b) 
         {
        
             Screen.TakeScreenshot_Static(screenA, screenB);
@@ -129,7 +130,8 @@ public class Bomb : MonoBehaviour {
        
         }
 
-        if (a && b == false && c)
+        // if (a && b == false && c)
+        else if (a && c)
         {
             
             Screen.TakeScreenshot_Static(screenA, screenB);
@@ -142,14 +144,10 @@ public class Bomb : MonoBehaviour {
            
         }
 
-        if (a && b == false && c == false)
-        {
-            DestroyBomb();
-            DestroyCube(Cube());
+       
 
-        }
-
-        if(a==false && b && c)
+        else if (b && c)
+        //if(a==false && b && c)
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
@@ -162,8 +160,16 @@ public class Bomb : MonoBehaviour {
            
         }
 
+        // if (a && b == false && c == false)
+        else if (a)
+        {
+            DestroyBomb();
+            DestroyCube(Cube());
 
-        if (a == false && b && c == false)
+        }
+
+        else if (b)
+       // if (a == false && b && c == false)
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
@@ -174,7 +180,8 @@ public class Bomb : MonoBehaviour {
            
         }
 
-        if (a == false && b == false && c)
+        else if (c)
+       // if (a == false && b == false && c)
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
@@ -193,22 +200,7 @@ public class Bomb : MonoBehaviour {
     //is Player1 Near?
     private bool Player1Near()
     {
-        /*
-         * @Santor
-         * Esto puede ser simplificado
-         */
-        /*  if ((Mathf.Abs(World.Instance.player1.transform.position.x - transform.position.x) < bombExplosionDistance)
-               && Mathf.Abs(World.Instance.player1.transform.position.z - transform.position.z) < bombExplosionDistance)
-          {
-
-              return true;
-          }
-
-          else 
-          {
-
-              return false;
-          }*/
+       
         return ((Mathf.Abs(World.Instance.player1.transform.position.x - transform.position.x) < bombExplosionDistance)
              && Mathf.Abs(World.Instance.player1.transform.position.z - transform.position.z) < bombExplosionDistance);
     }
@@ -217,22 +209,7 @@ public class Bomb : MonoBehaviour {
     //is Player2 Near?
     private bool Player2Near()
     {
-        /*
-         * @Santor
-         * Esto puede ser simplificado
-         */
-        /* if ((Mathf.Abs(World.Instance.player2.transform.position.x - transform.position.x) < bombExplosionDistance)
-              && Mathf.Abs(World.Instance.player2.transform.position.z - transform.position.z) < bombExplosionDistance)
-         {
-
-             return true;
-         }
-
-         else
-         {
-
-             return false;
-         }*/
+      
         return ((Mathf.Abs(World.Instance.player2.transform.position.x - transform.position.x) < bombExplosionDistance)
              && Mathf.Abs(World.Instance.player2.transform.position.z - transform.position.z) < bombExplosionDistance);
     }
