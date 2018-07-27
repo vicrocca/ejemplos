@@ -218,32 +218,45 @@ public class Bomb : MonoBehaviour {
     //is there a Cube Near?
     private bool CubeNear()
     {
-        int a = 0;
+        /*
+         * @Santor
+         * Se podría simplificar así
+         */
 
-    for (int i = 0; i<World.Instance.explosiveItems.Count; i++)
+        for (int i = 0; i < World.Instance.explosiveItems.Count; i++)
         {
             if (Mathf.Abs(World.Instance.explosiveItems[i].transform.position.x - transform.position.x) < bombExplosionDistance
                 && Mathf.Abs(World.Instance.explosiveItems[i].transform.position.z - transform.position.z) < bombExplosionDistance)
-            {
+                return true;
+        }
+        return false;
 
-                a = a + 1;
-               
+        /*
+int a = 0;
+for (int i = 0; i<World.Instance.explosiveItems.Count; i++)
+{
+    if (Mathf.Abs(World.Instance.explosiveItems[i].transform.position.x - transform.position.x) < bombExplosionDistance
+        && Mathf.Abs(World.Instance.explosiveItems[i].transform.position.z - transform.position.z) < bombExplosionDistance)
+    {
+
+        a = a + 1;
+
 }
-           
-        }
 
-        if (a>0)
-        {
+}
 
-            return true;
-        }
+if (a>0)
+{
 
-        else
-        {
+    return true;
+}
 
-            return false;
-        }
+else
+{
 
+    return false;
+}
+*/
     }
 
     //returns which Cube is near
