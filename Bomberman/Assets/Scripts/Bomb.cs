@@ -103,41 +103,80 @@ public class Bomb : MonoBehaviour {
         bool b = Player1Near();
         bool c = Player2Near();
 
+
+        if (a && !b && !c)
+        { 
+            DestroyCube(Cube());
+        }
+
+        else 
+
+        { 
+            Screen.TakeScreenshot_Static(screenA, screenB);
+            yield return new WaitForSeconds(screenDelay);
+
+            if (a)
+            { 
+                DestroyCube(Cube());
+
+            }
+
+            if (b)
+                {
+                    World.Instance.KillPlayer(World.Instance.player1);
+
+                }
+             if (c)
+                {
+                    World.Instance.KillPlayer(World.Instance.player2);
+
+                }
+           
+
+            }
+
+
+            
+     
+
+        DestroyBomb();
+    }
+        /*
         if (a && b  && c )
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
            yield return new WaitForSeconds(screenDelay);
 
-            DestroyBomb();
+           
             DestroyCube(Cube());
             World.Instance.KillPlayer(World.Instance.player1);
            World.Instance.KillPlayer(World.Instance.player2);
 
         }
 
-        //if (a && b && c == false)
+       
         else if (a && b) 
         {
        
             Screen.TakeScreenshot_Static(screenA, screenB);
             yield return new WaitForSeconds(screenDelay);
 
-            DestroyBomb();
+          
             DestroyCube(Cube());
             World.Instance.KillPlayer(World.Instance.player1);
 
        
         }
 
-        // if (a && b == false && c)
+    
         else if (a && c)
         {
             
             Screen.TakeScreenshot_Static(screenA, screenB);
             yield return new WaitForSeconds(screenDelay);
 
-            DestroyBomb();
+           
             DestroyCube(Cube());
             World.Instance.KillPlayer(World.Instance.player2);
           
@@ -147,55 +186,56 @@ public class Bomb : MonoBehaviour {
        
 
         else if (b && c)
-        //if(a==false && b && c)
+       
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
             yield return new WaitForSeconds(screenDelay);
 
-            DestroyBomb();
+        
             World.Instance.KillPlayer(World.Instance.player1);
             World.Instance.KillPlayer(World.Instance.player2);
 
            
         }
 
-        // if (a && b == false && c == false)
+      
         else if (a)
         {
-            DestroyBomb();
+           
             DestroyCube(Cube());
 
         }
 
         else if (b)
-       // if (a == false && b && c == false)
+     
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
             yield return new WaitForSeconds(screenDelay);
 
-            DestroyBomb();
+          
             World.Instance.KillPlayer(World.Instance.player1);
            
         }
 
         else if (c)
-       // if (a == false && b == false && c)
+      
         {
 
             Screen.TakeScreenshot_Static(screenA, screenB);
            yield return new WaitForSeconds(screenDelay);
 
-            DestroyBomb();
+           
             World.Instance.KillPlayer(World.Instance.player2);
       
         }
 
+        DestroyBomb();
+         }
+    */
 
-    
-
-    }
+   
 
     //is Player1 Near?
     private bool Player1Near()
