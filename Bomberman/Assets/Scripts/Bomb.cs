@@ -193,38 +193,48 @@ public class Bomb : MonoBehaviour {
     //is Player1 Near?
     private bool Player1Near()
     {
-        if ((Mathf.Abs(World.Instance.player1.transform.position.x - transform.position.x) < bombExplosionDistance)
-             && Mathf.Abs(World.Instance.player1.transform.position.z - transform.position.z) < bombExplosionDistance)
-        {
+        /*
+         * @Santor
+         * Esto puede ser simplificado
+         */
+        /*  if ((Mathf.Abs(World.Instance.player1.transform.position.x - transform.position.x) < bombExplosionDistance)
+               && Mathf.Abs(World.Instance.player1.transform.position.z - transform.position.z) < bombExplosionDistance)
+          {
 
-            return true;
-        }
+              return true;
+          }
 
-        else 
-        {
+          else 
+          {
 
-            return false;
-        }
-            
+              return false;
+          }*/
+        return ((Mathf.Abs(World.Instance.player1.transform.position.x - transform.position.x) < bombExplosionDistance)
+             && Mathf.Abs(World.Instance.player1.transform.position.z - transform.position.z) < bombExplosionDistance);
     }
 
 
     //is Player2 Near?
     private bool Player2Near()
     {
-        if ((Mathf.Abs(World.Instance.player2.transform.position.x - transform.position.x) < bombExplosionDistance)
-             && Mathf.Abs(World.Instance.player2.transform.position.z - transform.position.z) < bombExplosionDistance)
-        {
+        /*
+         * @Santor
+         * Esto puede ser simplificado
+         */
+        /* if ((Mathf.Abs(World.Instance.player2.transform.position.x - transform.position.x) < bombExplosionDistance)
+              && Mathf.Abs(World.Instance.player2.transform.position.z - transform.position.z) < bombExplosionDistance)
+         {
 
-            return true;
-        }
+             return true;
+         }
 
-        else
-        {
+         else
+         {
 
-            return false;
-        }
-
+             return false;
+         }*/
+        return ((Mathf.Abs(World.Instance.player2.transform.position.x - transform.position.x) < bombExplosionDistance)
+             && Mathf.Abs(World.Instance.player2.transform.position.z - transform.position.z) < bombExplosionDistance);
     }
 
 

@@ -101,7 +101,7 @@ public class UIBehaviour : MonoBehaviour {
 
     public Sprite Image(string path)
     {
-            byte[] www = System.IO.File.ReadAllBytes("/Users/PauliDagnino/Desktop/GitHub/ejemplos/Bomberman/Assets/" + path);
+        byte[] www = System.IO.File.ReadAllBytes(Application.dataPath + path);
         Texture2D tex = new Texture2D(400, 500);
         tex.LoadImage(www);
         Sprite tempSprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), Vector2.zero);
