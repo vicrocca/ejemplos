@@ -104,6 +104,7 @@ public class Bomb : MonoBehaviour {
         bool c = Player2Near();
 
 
+        //SIMPLIFICAR EL DESTROYCUBE
         if (a && !b && !c)
         { 
             DestroyCube(Cube());
